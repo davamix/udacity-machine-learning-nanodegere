@@ -1,2 +1,7 @@
 machine-learning-master/
+
+# Python
 __pycache__/
+
+# Jupyter
+.ipynb_checkpoints/
