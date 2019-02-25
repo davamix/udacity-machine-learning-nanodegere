@@ -1,4 +1,4 @@
-# Machine Learning Nanodegree Labs
+# Udacity Machine Learning Nanodegree
 
 ## Course 1: Machine Learning Foundations
 
