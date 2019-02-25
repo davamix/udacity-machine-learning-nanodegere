@@ -1,0 +1,1 @@
+# Faces recognitions example using eigenfaces and SVMs
