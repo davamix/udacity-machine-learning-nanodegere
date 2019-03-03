@@ -27,3 +27,4 @@
 * Class 4: Deep Neural Networks -> Student Admissions in Keras
 * Class 4: Deep Neural Networks -> IMDB in Keras
 * Class 5: Convolutional Neural Networks -> Training an MLP on MNIST
+* Class 5: Convolutional Neural Networks -> Classify images from the CIFAR-10 database
