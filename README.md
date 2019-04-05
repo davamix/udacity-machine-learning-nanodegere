@@ -29,6 +29,7 @@
 * Class 5: Convolutional Neural Networks -> Training an MLP on MNIST
 * Class 5: Convolutional Neural Networks -> Classify images from the CIFAR-10 database
 * Class 12: Dynamic Programming -> OpenAI Gym - FrozenLake
+* Class 13: Monte Carlo Methods -> OpenAI Gym - Blackjack
 
 ### PROJECTS
 
