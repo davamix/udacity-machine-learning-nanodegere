@@ -30,6 +30,7 @@
 * Class 5: Convolutional Neural Networks -> Classify images from the CIFAR-10 database
 * Class 12: Dynamic Programming -> OpenAI Gym - FrozenLake
 * Class 13: Monte Carlo Methods -> OpenAI Gym - Blackjack
+* Class 14: Temporal-Difference Methods -> OpenAI Gym - CliffWalking
 
 ### PROJECTS
 
