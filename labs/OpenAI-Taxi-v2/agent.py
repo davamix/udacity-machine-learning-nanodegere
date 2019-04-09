@@ -15,7 +15,6 @@ class Agent:
         self.Q = defaultdict(lambda: np.zeros(self.nA))
         self.alpha = 0.01
         self.gamma = 1.0
-        #self.policy_s = 
 
     def epsilon_greedy_probs(self, state, i_episode, eps=None):
         epsilon = 1.0 / i_episode
@@ -25,8 +24,6 @@ class Agent:
         
         policy_s = np.ones(self.nA) * epsilon / self.nA
         policy_s[np.argmax(self.Q[state])] = 1 - epsilon + (epsilon / self.nA)
-        #print(policy_s.shape)
-        #sys.quit()
         return policy_s
     
     def select_action(self, state, policy):
@@ -35,12 +32,12 @@ class Agent:
         Params
         ======
         - state: the current state of the environment
+        - policy: 1D numpy array with policy.shape equal to the number of states
 
         Returns
         =======
         - action: an integer, compatible with the task's action space
         """
-        #return np.random.choice(self.nA)
         return np.random.choice(np.arange(self.nA), p=policy)
 
     def step(self, state, action, reward, next_state, done, policy):
@@ -53,8 +50,6 @@ class Agent:
         - reward: last reward received
         - next_state: the current state of the environment
         - done: whether the episode is complete (True or False)
+        - policy: 1D numpy array with policy.shape equal to the number of states
         """
-        # self.Q[state][action] += 1
-
         self.Q[state][action] = self.Q[state][action] + (self.alpha * (reward + (self.gamma * np.dot(self.Q[next_state], policy)) - self.Q[state][action]))
-        #self.Q[state] = self.Q[state] + (self.alpha * (reward + (self.gamma * self.Q[next_state]) - self.Q[state]))
