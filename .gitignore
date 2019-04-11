@@ -6,3 +6,6 @@ __pycache__/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# OpenAI Gym
+checkpoints/
