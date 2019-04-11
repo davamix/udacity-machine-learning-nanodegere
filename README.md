@@ -32,6 +32,9 @@
 * Class 13: Monte Carlo Methods -> OpenAI Gym - Blackjack
 * Class 14: Temporal-Difference Methods -> OpenAI Gym - CliffWalking
 * Class 15: Solve OpenAI Gym's Taxi-v2 Task
+* Class 16: RL in Continuous Spaces -> Discretization
+* Class 16: RL in Continuous Spaces -> Tile Coding
+* Class 17: Deep Q-Learning -> OpenAI Gym - Cart-Pole
 
 ### PROJECTS
 
