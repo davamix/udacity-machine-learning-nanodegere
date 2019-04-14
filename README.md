@@ -39,3 +39,4 @@
 ### PROJECTS
 
 - [Dog Breed Classifier](https://github.com/davamix/udacity-machine-learning-nanodegere/tree/master/projects/dog-project)
+- [Teach a Quadcopter How to Fly](https://github.com/davamix/udacity-machine-learning-nanodegere/tree/master/projects/RL-Quadcopter-2)
