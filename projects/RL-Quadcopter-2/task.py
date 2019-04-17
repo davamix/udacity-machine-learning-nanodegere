@@ -27,47 +27,25 @@ class Task():
 
     def get_reward(self):
         """Uses current pose of sim to return reward."""
-        #reward = 1.-.3*(abs(self.sim.pose[:3] - self.target_pos)).sum()
-        #reward = 1 / (1.-.3*(abs(self.sim.pose[:3] - self.target_pos)).sum())
-
-        # Penalize the changes in x-axis and y-axis (Takeoff)
-        #xy_penalty = -1 / (abs(np.sum(self.sim.pose[:2])) + 0.1)
-        # Increase the reward when the difference is small in z-axis
-        #z_reward = 1 / (abs(self.sim.pose[2] - self.target_pos[2]) + 0.1) # +diferrence -reward
-        
-        # Suggested in review
-        #reward = 1.-.003*(abs(self.sim.pose[:3] - self.target_pos)).sum()
-
-        #reward = z_reward + xy_penalty
-
-        #abs_distance = abs((self.sim.pose[2] - self.target_pos[2]))
-        #abs_distance = abs(self.sim.pose[:3] - self.target_pos).sum()
-
-        #distance_reward = 1 - (abs_distance**.5) # closer, more reward
-
-        #vel_discount = (1 - max(self.sim.angular_v[2], 0.1)) ** (1 / max(abs_distance, 0.1))
-        
-        #reward = vel_discount * distance_reward
-        #reward = distance_reward
-
-
+        # reward = np.tanh(.003*(abs(self.sim.pose[:3] - self.target_pos)).sum())
         z_dist_reward = 0.0
 
-        # Position between the floor and the target_position (+ reward)
+        # # Position between the floor and the target_position (+ reward)
         if self.sim.pose[2] > 0 and self.sim.pose[2] <= self.target_pos[2]:
-            z_dist_reward = np.tanh(self.target_pos[2] - (self.target_pos[2] - self.sim.pose[2])) * .5
+            z_dist_reward += 1 - .005 * (self.target_pos[2] - self.sim.pose[2])
         # Position over the target_position (- reward)
-        elif self.sim.pose[2] > self.target_pos[2]:
-            z_dist_reward -= np.tanh(self.target_pos[2] - (self.target_pos[2] - self.sim.pose[2])) * .003
-        # Position under the floor (-- reward)
-        else:
-            z_dist_reward -= np.tanh(self.target_pos[2] + abs(self.sim.pose[2])) * .003
+        # else: # self.sim.pose[2] > self.target_pos[2]:
+        #     z_dist_reward -= .003* (self.sim.pose[2] - self.target_pos[2])
+        # Position under the floor (- reward)
+        # else:
+        #     z_dist_reward += .003 * (self.sim.pose[2] - self.target_pos[2]) # Negative value
 
         # - reward if the agent move in any other direction
-        xy_dist_reward = -np.tanh(abs(self.sim.pose[:2] - self.target_pos[:2]).sum()) * .003
+        #xy_dist_reward = 1 - .001 * abs(self.sim.pose[:2] - self.target_pos[:2]).sum()
 
-        reward = z_dist_reward + xy_dist_reward
-
+        reward = np.tanh(z_dist_reward) # - xy_dist_reward
+        
+        # return 1- reward
         return reward
 
     def step(self, rotor_speeds):
