@@ -31,6 +31,8 @@ All images has been resized to a resolution of 640x480
 
 ## Solution Statement
 
+
+
 ## Benchmark Model
 
 ## Evaluation Metrics
