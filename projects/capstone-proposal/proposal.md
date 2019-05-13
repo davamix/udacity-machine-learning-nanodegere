@@ -1,55 +1,72 @@
 # Machine Learning Engineer Nanodegree
 ## Capstone Proposal
 
-# State Farm Distracted Driver Detection
+# Malaria Cells Detection
 
 Daniel Valcarce
 
-May 3rd, 2019
-
+May 14th, 2019
 
 ## Domain Background
 
-According to the [CDC][1] motor vehicle safety division, one in five car accidents is caused by a distracted driver. Each day in the United States, approximately 9 people are killed and more than 1,000 injured in crashes that are reported to involve a distracted driver<sup>1</sup>, this translates to 425,000 people injured and 3,000 people killed by distracted driving every year.
+According to the <em>World malaria report</em><sup>1</sup>, in 2017, an estimated 219 million cases of malaria occurred worldwide (95% confidence interval [CI]: 203–262 million), compared with 239 million cases in 2010 (95% CI: 219–285 million) and 217 million cases in 2016 (95% CI: 200–259 million).
 
-Distracted driving is driving while doing another activity that takes your attention away from driving. Distracted driving can increase the chance of a motor vehicle crash
+In 2017, there were an estimated 435 000 deaths from malaria globally, compared with 451000 estimated deaths in 2016, and 607000 in 2010. Nearly 80% of global malaria deaths in 2017 were concentrated in 17 countries in the WHO African Region and India; 7 of these countries accounted for 53% of all global malaria deaths.
+
+Effective surveillance of malaria cases and deaths is essential for identifying the areas or population groups that are most affected by malaria, and for targeting resources for maximum impact. A strong surveillance system requires high levels of access to care and case detection, and complete reporting of health information by all sectors, whether public or private. 
 
 ## Problem Statement
 
-In the [Kaggle competition][1], [State Farm][2] hopes to improve these alarming statistics, and better insure their customers, by testing whether dashboard cameras can automatically detect drivers engaging in distracted behaviors. Given a dataset of 2D dashboard camera images, State Farm is challenging Kagglers to classify each driver's behavior. Are they driving attentively, wearing their seatbelt, or taking a selfie with their friends in the backseat?
-
+In order to reduce the burden for microscopists in resource-constrained regions and improve diagnostic accuracy, the <em>National Library of Medicine</em><sup>2</sup> provide us with a dataset<sup>3</sup> with which we will create a model to detect malaria parasite in thin blood smear images.
 
 ## Datasets and Inputs
 
-The dataset consist in 102150 images of drivers, each taken in a car with a driver doing something in the car (texting, eating, talking on the phone, makeup, reaching behind, etc).
+A detailed description about how the images had been obtained and labeled can be found in the dataset page<sup>4</sup>.
 
-The train set is divided in 10 categories, one per class to be classified and contains ~2300 images each.
+The dataset contains a total of 27560 images separated in two folders, Parasitized folder and Uninfected folder with 13780 images each.
 
-The test set contains ~79000 images.
-
-All images has been resized to a resolution of 640x480
+The images size varies between 49x58 and 349x241.
 
 ## Solution Statement
 
+The solution proposed is to create a CNN image classifier to know when an image of a cell is parasitized or uninfected, applying the progressive resizing technique<sup>5</sup>, consisting in a progressive, sequential resizing of all images while training, from smaller to bigger sizes.
 
+The Accuracy is a good metric to evaluate the model due to the dataset is well balanced for both classes, having the same amount of images for each, parasitized and uninfected, but other metrics like F1-score or Specificity could be interesting to use as well.
 
 ## Benchmark Model
 
+In the research article "Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images"<sup>6</sup>, Dr Rajaraman S and his team shown a table<sup>7</sup> with the performance metrics results obtained during their experiments, comparing their custom model against other well-known models like AlexNet, VGG-16, ResNet-50, Xception and DenseNet-121. 
+
+In our project we will use the same metrics and we will to compare the results against the values of their custom model.
+
 ## Evaluation Metrics
 
-The metric to evaluate the performance of the model will be the multi-class logarithmic loss.
+In the article cited before the metrics used are: 
+- Accuracy
+- AUC
+- Sensitivity
+- Specificity
+- F1-score
+- MCC
 
-![multi-class logarithmic loss formula](./logloss_formula.svg)
-
-Where <em>N</em> is the number of images in the test set, <em>M</em> is the number of image class labels, <em>log</em> is the natural logarithm, <em>y<sub>ij</sub></em> <em>y<sub>ij</sub></em>is 1 if observation <em>i</em>
-belongs to class <em>j</em> and 0 otherwise, and <em>p<sub>ij</sub></em> is the predicted probability that observation <em>i</em> belongs to class <em>j</em>
+We will use the same evaluation metrics in order to compare if our model performs better or worst than theirs.
 
 ## Project Design
 
+- No clean data
+- Split data into Training / Validation / Test
+- Design the network with default values
+- Train the model and evaluate
+- Tuning - Re-train
+- Test the model against Test data
+- Show the results obtained
+
 ## References
 
-1. National Highway Traffic Safety Administration. Traffic Safety Facts Research Notes 2016: Distracted Driving.S. Department of Transportation, Washington, DC: NHTSA; 2015 [https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812517](https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812517)
-
-[1]: https://www.cdc.gov/motorvehiclesafety/distracted_driving/
-[2]: https://www.kaggle.com/c/state-farm-distracted-driver-detection/data
-[3]: https://www.statefarm.com/
+1. https://www.who.int/malaria/media/world-malaria-report-2018/en/
+2. https://www.nlm.nih.gov/
+3. https://ceb.nlm.nih.gov/proj/malaria/cell_images.zip (zip file ~345 MB)
+4. https://ceb.nlm.nih.gov/repositories/malaria-datasets/
+5. https://towardsdatascience.com/boost-your-cnn-image-classifier-performance-with-progressive-resizing-in-keras-a7d96da06e20
+6. https://peerj.com/articles/4568/
+7. https://peerj.com/articles/4568/#table-2
