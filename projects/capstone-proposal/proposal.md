@@ -49,17 +49,17 @@ In the article cited before the metrics used are:
 - F1-score
 - MCC
 
-I will use the same evaluation metrics in order to compare if the model performs better or worst than theirs.
+I will use the same evaluation metrics in order to compare if the model performs better or worse than theirs.
 
 ## Project Design
 
-Because the dataset is clean and well balanced I can skip this step.
+Because the dataset is clean and well balanced, I can skip this step.
 
-The data will be splitted in three groups, Training with the 75% of the data (20670 images), Validation with 20% (5512 images) and Test with the 5% (1378 images).
+The data will be split in three groups, Training with the 75% of the data (20670 images), Validation with 20% (5512 images) and Test with the 5% (1378 images).
 
 The first step will be to create a basic CNN model with the default values for the  hyperparameters. The images for this model will be resized to a small value and finally the model will be trained and validate using cross-validation.
 
-The next step will be to create a new CNN model and use transfer learning to get the weigths from the first model. The images for this model will be bigger than the previous one. Finally I will train and validate using cross-validation as before.
+The next step will be to create a new CNN model and use transfer learning to get the weights from the first model. The images for this model will be bigger than the previous one. Finally, I will train and validate using cross-validation as before.
 
 The main idea is to repeat these steps a few more times, increasing the size of the images in each step. 
 
