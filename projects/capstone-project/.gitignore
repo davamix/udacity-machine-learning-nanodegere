@@ -1,0 +1,5 @@
+// Jupyter data
+.ipynb_checkpoints/
+
+// docs, data, tools... to support the development
+external/

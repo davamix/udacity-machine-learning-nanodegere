@@ -1,0 +1,8 @@
+# 20190521
+- Created folder structure
+- Created and trained a basic model
+
+Refs:
+- https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+- https://machinelearningmastery.com/how-to-load-large-datasets-from-directories-for-deep-learning-with-keras/
+
