@@ -2,13 +2,11 @@
 # https://stackoverflow.com/questions/17412439/how-to-split-data-into-trainset-and-testset-randomly
 
 # Usage:
-# script class_folder data_folder 70 20 5
-#   class_folder: folder with original images from dataset for one class
-#   data_folder: parent folder of train, validation and test folders
+# dataset-splitter.py  70 20 5
 #   percentage of data for Train(70), Validation(20) and Test(5)
 
 # Behaviour:
-# Get a bunch of images from class_folder and copy those images into "data_folder/train/class" folder
+# Split the percentage of images from the original dataset folder into the three different sets of Train, Validation and Test on data folder
 
 import os
 import argparse
