@@ -1,0 +1,3 @@
+# 20190522
+
+- New script in tools folder, dataset-splitter.py, that allow to split the images from the original daset folder into different sets for Train, Validation and Test
