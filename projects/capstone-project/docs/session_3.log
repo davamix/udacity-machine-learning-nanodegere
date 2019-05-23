@@ -1,0 +1,4 @@
+# 20190523
+
+- New script to remove all images from Train, Validation and Test folders
+- Added more output information to dataset-splitter scritp to know how many images will be to copy
