@@ -63,7 +63,7 @@ uninfected_images = get_files_from_path(UNINFECTED_IMAGES_PATH)
 random.shuffle(parasitized_images)
 random.shuffle(uninfected_images)
 
-## PARASIZTIZED IMAGES ##
+## PARASITIZED IMAGES ##
 
 # Calculate the amount of parasitized images to copy based on the argument
 train_to_copy = train_amount * len(parasitized_images) / 100
@@ -75,11 +75,11 @@ image_index = 0
 
 print("Splitting Parasitized images...")
 
-print("-> Copying train images...")
+print("-> Copying {} train images...".format(train_to_copy))
 last_index = copy_images(train_to_copy, PARASITIZED_IMAGES_PATH, TRAIN_PARASITIZED_IMAGES_PATH, parasitized_images)
-print("-> Copying validation images...")
+print("-> Copying {} validation images...".format(validation_to_copy))
 last_index = copy_images(validation_to_copy, PARASITIZED_IMAGES_PATH, VALIDATION_PARASITIZED_IMAGES_PATH, parasitized_images, last_index)
-print("-> Copying test images...")
+print("-> Copying {} test images...".format(test_to_copy))
 last_index = copy_images(test_to_copy, PARASITIZED_IMAGES_PATH, TEST_PARASITIZED_IMAGES_PATH, parasitized_images, last_index)
 
 
@@ -95,9 +95,9 @@ image_index = 0
 
 print("Splitting Uninfected images...")
 
-print("-> Copying train images...")
+print("-> Copying {} train images...".format(train_to_copy))
 last_index = copy_images(train_to_copy, UNINFECTED_IMAGES_PATH, TRAIN_UNINFECTED_IMAGES_PATH, uninfected_images)
-print("-> Copying validation images...")
+print("-> Copying {} validation images...".format(validation_to_copy))
 last_index = copy_images(validation_to_copy, UNINFECTED_IMAGES_PATH, VALIDATION_UNINFECTED_IMAGES_PATH, uninfected_images, last_index)
-print("-> Copying test images...")
+print("-> Copying {} test images...".format(test_to_copy))
 last_index = copy_images(test_to_copy, UNINFECTED_IMAGES_PATH, TEST_UNINFECTED_IMAGES_PATH, uninfected_images, last_index)
