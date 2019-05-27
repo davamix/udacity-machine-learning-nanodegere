@@ -1,5 +1,8 @@
 // Jupyter data
 .ipynb_checkpoints/
 
+// Visual Studio Code
+.vscode/
+
 // docs, data, tools... to support the development
 external/
