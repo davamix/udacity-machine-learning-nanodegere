@@ -6,3 +6,6 @@
 
 // docs, data, tools... to support the development
 external/
+
+// Python compiled files
+.pyc
