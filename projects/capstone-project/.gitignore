@@ -9,3 +9,6 @@ external/
 
 // Python compiled files
 .pyc
+
+// CSV files
+.csv
