@@ -13,3 +13,6 @@ echo "Removing uninfected validation images"
 rm ../data/validation/uninfected/*.png
 echo "Removing uninfected test images"
 rm ../data/test/uninfected/*.png
+
+echo "Removing preview images"
+rm ../data/preview/*.png
