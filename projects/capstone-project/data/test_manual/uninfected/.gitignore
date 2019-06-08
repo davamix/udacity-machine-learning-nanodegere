@@ -4,7 +4,3 @@
 // except these files 
 !.gitignore
 !README.md
-!train/
-!validation/
-!test/
-!test_manual/
