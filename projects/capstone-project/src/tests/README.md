@@ -1,1 +1,0 @@
-Run the tests from `capstone-project` folder with `python -m unittest discover`
