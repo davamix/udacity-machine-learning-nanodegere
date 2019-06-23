@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
 \title{Machine Learning Engineer Nanodegree}
 \author{Daniel Valcarce}
@@ -7,6 +7,7 @@
 \usepackage{array}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{float}
 \hypersetup{colorlinks,linkcolor={red!50!black}, citecolor={blue!50!black}, urlcolor={blue!80!black}}
 
 \renewcommand{\thesection}{\Roman{section}} 
@@ -78,8 +79,11 @@
 
 	\section{Analysis}
 	\subsection{Data Exploration}	
-	The dataset contains a total of 27560 images separated in two folders, Parasitized folder and
-	Uninfected folder with 13780 images each.
+	The dataset contains a total of 27558 color images separated in two folders, Parasitized folder and
+	Uninfected folder with 13779 images each.
+	
+	\medskip
+	The images were manually annotated by an expert slide reader at the Mahidol-Oxford Tropical Medicine Research Unit in Bangkok, Thailand.
 	
 	\medskip
 	The image sizes varies between 49x58 and 349x241 pixels.
@@ -103,19 +107,56 @@
 	\end{figure}
 
 	\subsection{Exploratory Visualization}
+	The plots below show how is the distribution of images regarding of it size in order to select the best values to apply the progressive resizing technique.
 	
-	\begin{figure}[h!]
+	\medskip
+	The Figures 2 and 3 show us that the X values (width) are between 120 and 145 for most of the images with only a few outliers.
+
+	
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=.9\textwidth]{dist_x.png}
-		\caption{Distribution based on the image width}
+		\caption{Distribution chart based on the image width}
 		\label{fig:width_dist}
-		\bigbreak
-		\includegraphics[ width=.9\textwidth]{dist_y.png}
-		\caption{Distribution based on the image height}
+	\end{figure}
+	\begin{figure}[H]
+		\includegraphics[width=.9\textwidth]{box_x.png}
+		\caption{Box chart based on the image width}
+		\label{fig:width_box}
+	\end{figure}
+
+	\medskip
+	The Figures 4 and 5 show how is the distribution for the  Y values (height) and looks similar to the X values, this means that the images are almost square images therefore there will be not much distortion when I will apply the resizing during the training process.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.9\textwidth]{dist_y.png}
+		\caption{Distribution chart based on the image height}
 		\label{fig:height_dist}
 	\end{figure}
-	
-	
-	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=.5\textwidth]{box_y.png}
+		\caption{Distribution based on the image height}
+		\label{fig:height_box}
+	\end{figure}
+
+	\medskip
+	The Table 2 shows the size for images with min/max values for each property, X and Y.
+
+	\medskip
+	\begin{table}[h!]
+		\centering
+		\caption{Min/Max mesures}
+		\label{tab:minmax}
+		\begin{tabular}{l|c|c}
+			\textbf{} & {X} & {Y} \\
+			\hline
+			Max X & 364 & 340 \\
+			Max Y & 208 & 382 \\
+			Min X & 46 & 79 \\
+			Min Y & 55 & 40 \\
+		\end{tabular}
+	\end{table}
 	
 \end{document}
