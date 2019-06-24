@@ -43,13 +43,13 @@
 	A common approach to create similar models consist in resize the images to a common size in order to train the model, then use this model to predict and classify new images. In this project I will apply a technique called \textbf{Progressive resizing} which consist of training different models for different size of images.
 	
 	\medskip
-	The idea behind this technique is to create different models for different image sizes. First I need to decide which sizes could be good to train the model based on the data exploration, then I'll create and train a model with the images resized to the lower size I chose. Once the first model is trained, I will apply transfer learning to create and train the second model with the next size for the images, and so on with all Once the first model is trained, I will apply transfer learning to create and train the second model with the next size for the images, and so on with all chosen sizes.
+	The idea behind this technique is to create different models for different image sizes. First I need to decide which sizes could be good to train the model based on the data exploration, then I'll create and train a model with the images resized to the lower size I chose. Once the first model is trained, I will apply transfer learning to create and train the second model with the next size for the images, and so on with all chosen sizes.
 	
 	\medskip
-	For each model I will get different metrics in order to know which model performs better and also to know if this technique is useful for this dataset.
+	For each model I will obtain different metrics in order to know which model performs better and also to know if this technique is useful for this dataset.
 	
 	\subsection{Metrics}
-	This project is based on the research article \textit{"Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images"}\footnote{\label{research_paper}\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5907772/}} where r Rajaraman S and his
+	This project is based on the research article \textit{"Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images"}\footnote{\label{research_paper}\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5907772/}} where Dr Rajaraman S and his
 	team shown a table\footnote{\label{table_metrics}\url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5907772/table/table-6/}} with the performance metrics results obtained during their experiments,
 	comparing their custom model against other well-known models like AlexNet, VGG-16,
 	ResNet-50, Xception and DenseNet-121.
@@ -74,6 +74,15 @@
 			\end{tabular}} \quad
 		\end{center}
 	\end{table}
+
+	\medskip
+	\begin{itemize}
+		\item TP: True Positives
+		\item TN: True Negatives
+		\item FP: False Positives
+		\item FN: False Negatives
+	\end{itemize}
+	
 
 \newpage
 
@@ -158,5 +167,31 @@
 			Min Y & 55 & 40 \\
 		\end{tabular}
 	\end{table}
+
+	\subsection{Algorithms and Techniques}
+	
+	\subsection{Benchmark}
+	
+	\section{Methodology}
+	
+	\subsection{Data Preprocesing}
+	
+	\subsection{Implementation}
+	
+	\subsection{Refinement}
+	
+	\section{Results}
+	
+	\subsection{Model Evaluation and Validation}
+	
+	\subsection{Justification}
+	
+	\section{Conclusion}
+	
+	\subsection{Free-Form Visualization}
+	
+	\subsection{Reflection}
+	
+	\subsection{Improvement}
 	
 \end{document}
